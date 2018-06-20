@@ -4,5 +4,5 @@ api = QApi(token=drower, phone="")
 print(api.balance)
 api.pay(account=raw_input('Pay:'), amount=raw_input('$:'))
 print(api.balance)
-exit = input("")
+exit = raw_input("exit")
 
