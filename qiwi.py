@@ -19,3 +19,23 @@ col ='''
 #############################################
 '''
 print (M,col,C)
+def user_info():
+	token=input('Token:')
+	api = QApi(token=token, phone="")
+	try:
+		print(G,api.balance,C)
+		pho=input('Mob:')
+		com=input('Com:')
+		def pay_info():
+			try:	
+				api.pay(account=pho, amount=input('Rub:'),comment=com)
+			except:
+				print(R,'Error:Money',C)
+				return pay_info()
+		pay_info()
+		print(G,api.balance,C)
+	except:
+		print(R,'Error:Token',C)
+		return user_info()
+user_info()
+input('Exit')
